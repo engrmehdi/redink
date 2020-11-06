@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="redink@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="redink">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="betdb"/>
+    <schema id="4" parent="1" name="chatuj"/>
+    <schema id="5" parent="1" name="demosite"/>
+    <schema id="6" parent="1" name="flashdb"/>
+    <schema id="7" parent="1" name="information_schema"/>
+    <schema id="8" parent="1" name="ministore"/>
+    <schema id="9" parent="1" name="mysql"/>
+    <schema id="10" parent="1" name="nomura_randomised_jack"/>
+    <schema id="11" parent="1" name="nomura_randomised_jboss"/>
+    <schema id="12" parent="1" name="nomura_randomised_jbpm"/>
+    <schema id="13" parent="1" name="nomura_randomised_ossp"/>
+    <schema id="14" parent="1" name="notepad"/>
+    <schema id="15" parent="1" name="pergamo"/>
+    <schema id="16" parent="1" name="systemsanalystdb"/>
+    <schema id="17" parent="1" name="taxtdb"/>
+    <schema id="18" parent="1" name="test"/>
+    <schema id="19" parent="1" name="v4_trunk_jackrabbit"/>
+    <schema id="20" parent="1" name="v4_trunk_jboss"/>
+    <schema id="21" parent="1" name="v4_trunk_jbpm_db"/>
+    <schema id="22" parent="1" name="v4_trunk_ossp_db"/>
+    <schema id="23" parent="1" name="v5_jackrabbit"/>
+    <schema id="24" parent="1" name="v5_jboss"/>
+    <schema id="25" parent="1" name="v5_jbpm_db"/>
+    <schema id="26" parent="1" name="v5_ossp_db"/>
+    <table id="27" parent="2" name="authors"/>
+    <table id="28" parent="2" name="comments"/>
+    <table id="29" parent="2" name="posts"/>
+    <column id="30" parent="27" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="27" name="email">
+      <Position>2</Position>
+      <DataType>varchar(300)|0</DataType>
+    </column>
+    <column id="32" parent="27" name="name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="33" parent="27" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="28" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="28" name="content">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="36" parent="28" name="authid">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="37" parent="28" name="postid">
+      <Position>4</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="38" parent="28" name="FKmlsceaiutcaccnhcrhl91iydf">
+      <ColNames>authid</ColNames>
+    </index>
+    <index id="39" parent="28" name="FKqt8anaen7vlhry2a766wkvv41">
+      <ColNames>postid</ColNames>
+    </index>
+    <key id="40" parent="28" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="28" name="FKmlsceaiutcaccnhcrhl91iydf">
+      <ColNames>authid</ColNames>
+      <RefSchemaName>redink</RefSchemaName>
+      <RefTableName>authors</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="42" parent="28" name="FKqt8anaen7vlhry2a766wkvv41">
+      <ColNames>postid</ColNames>
+      <RefSchemaName>redink</RefSchemaName>
+      <RefTableName>posts</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="43" parent="29" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="29" name="content">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="45" parent="29" name="authid">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="46" parent="29" name="FKklmiqs1ffibgighgmoq84gt1t">
+      <ColNames>authid</ColNames>
+    </index>
+    <key id="47" parent="29" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="48" parent="29" name="FKklmiqs1ffibgighgmoq84gt1t">
+      <ColNames>authid</ColNames>
+      <RefSchemaName>redink</RefSchemaName>
+      <RefTableName>authors</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
